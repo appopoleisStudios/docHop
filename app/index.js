@@ -1,14 +1,14 @@
 import { StatusBar } from "expo-status-bar";
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
-
+import { router } from "expo-router";
 export default function App() {
   return (
     <View style={styles.container}>
       <View style={styles.wrapper}>
         <View style={styles.images}>
-          <Image source={require("./assets/SplashScreen/HomeIcon.png")} />
+          <Image source={require("../assets/SplashScreen/HomeIcon.png")} />
           <Image
-            source={require("./assets/SplashScreen/DocHop.png")}
+            source={require("../assets/SplashScreen/DocHop.png")}
             style={{ marginTop: 10 }}
           />
         </View>
@@ -25,27 +25,8 @@ export default function App() {
             By tapping ‘Sign in’ you agree to our Terms. Learn how we process
             your data in our Privacy Policy and Cookies Policy.
           </Text>
-          {/* <Pressable
-            style={{
-              width: "90%",
-              borderRadius: 20,
-              backgroundColor: "white",
-              justifyContent: "center",
-              alignItems: "center",
-              paddingVertical: 15,
-            }}
-          >
-            <Text
-              style={{
-                color: "#96b1fe",
-                fontSize: 16,
-                fontWeight: "bold",
-              }}
-            >
-              Create Account
-            </Text>
-          </Pressable> */}
           <Pressable
+            onPress={()=>router.replace("/login")}
             style={{
               width: "80%",
               borderRadius: 20,
